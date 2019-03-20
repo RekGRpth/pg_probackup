@@ -31,9 +31,10 @@ include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/contrib/contrib-global.mk
 endif # USE_PGXS
 
-ifeq ($(top_srcdir),../..)
+top_srcdir=../postgres
+ifeq ($(top_srcdir),../postgres)
  ifeq ($(LN_S),ln -s)
-	srchome=$(top_srcdir)/..
+	srchome=../$(top_srcdir)
  endif
 else
 srchome=$(top_srcdir)
